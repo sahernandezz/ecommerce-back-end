@@ -1,0 +1,55 @@
+server:
+  port: 8080
+
+spring:
+  data:
+    datasource:
+      url: jdbc:postgresql://localhost:5432/ecommerce
+      username: postgres
+      password: postgres
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+  graphql:
+    graphiql:
+      enabled: true
+
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: dsfsdf@gmail.com
+    password: sadfasdf
+    properties:
+      mail.smtp.auth: true
+      mail.smtp.starttls.required: true
+      mail.smtp.starttls.enable: true
+      mail.smtp.connectiontimeout: 5000
+      mail.smtp.timeout: 5000
+      mail.smtp.writetimeout: 5000
+
+  thymeleaf:
+    prefix: classpath:/templates/mail/
+    suffix: .html
+
+expiration:
+  time:
+    token: 1
+
+auth:
+  user:
+    time_recovery_code: 10
+    code_length: 8
+  email:
+    recovery_code:
+      url: /recover/
+      subject: Recuperar contraseña
+      templete: recoveryMail
+    recovery_confirmation:
+      subject: Hubo un cambio en tu cuenta
+      templete: confirmationMail
+    url: http://localhost:3000
