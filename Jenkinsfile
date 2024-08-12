@@ -5,7 +5,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Clonar el repositorio
-                git 'https://github.com/tu-usuario/tu-repositorio.git'
+                git 'https://github.com/sahernandezz/ecommerce-back-end.git'
             }
         }
 
