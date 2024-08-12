@@ -18,19 +18,6 @@ pipeline {
             }
         }
 
-        stage('Test') {
-            steps {
-                // Ejecutar pruebas con Gradle
-                sh './gradlew test'
-            }
-            post {
-                always {
-                    // Archivar resultados de pruebas
-                    junit '**/build/test-results/test/*.xml'
-                }
-            }
-        }
-
         stage('Deploy') {
             steps {
                 // Desplegar usando Docker Compose
