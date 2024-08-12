@@ -11,6 +11,8 @@ pipeline {
 
         stage('Build') {
             steps {
+                // Dar permisos de ejecución a gradlew
+                sh 'chmod +x ./gradlew'
                 // Construir el proyecto con Gradle
                 sh './gradlew clean build'
             }
